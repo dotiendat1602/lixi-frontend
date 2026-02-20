@@ -471,7 +471,9 @@
 
     async function loadWheel() {
       try {
-        const res = await fetch(API + "/api/config");
+        const res = await fetch(API + "/api/config", {
+          headers: { "ngrok-skip-browser-warning": "true" },
+        });
         const data = await res.json();
 
         const slots = [];
@@ -613,7 +615,11 @@
         fd.append("qrImage", file);
         fd.append("prizeAmount", picked.prize.amount.toString());
 
-        const res = await fetch(API + "/api/spin", { method: "POST", body: fd });
+        const res = await fetch(API + "/api/spin", {
+          method: "POST",
+          headers: { "ngrok-skip-browser-warning": "true" },
+          body: fd,
+        });
         const data = await res.json();
 
         if (res.status === 409 && data.code === "PRIZE_SOLD_OUT") {
