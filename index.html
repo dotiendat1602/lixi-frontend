@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lì Xì Tết 2026 - Gia đình Hằng + Đạt</title>
+
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c92a2a 100%);
+      padding: 14px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "🧧🎉🎊";
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 34px;
+      opacity: 0.9;
+      animation: float 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "🎆🏮🧨";
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      font-size: 34px;
+      opacity: 0.9;
+      animation: float 3s ease-in-out infinite 1.5s;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    .container {
+      width: min(520px, 100%);
+      background: linear-gradient(to bottom, #fff9f0, #ffe8d6);
+      border-radius: 22px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      border: 3px solid #ffd700;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #ff3838, #ff6b6b);
+      padding: 18px 14px;
+      text-align: center;
+      border-bottom: 3px solid #ffd700;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+      color: #ffd700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+      font-weight: 900;
+    }
+
+    .header p {
+      margin: 6px 0 0;
+      color: #fff;
+      font-size: 12px;
+      opacity: 0.95;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    }
+
+    .content {
+      padding: 14px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c92a2a;
+      margin: 6px 0 10px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .wheel-section {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .wheel-container {
+      position: relative;
+      width: min(86vw, 320px);
+      height: min(86vw, 320px);
+      margin: 10px auto 4px;
+    }
+
+    .wheel {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 7px solid #ffd700;
+      box-shadow: 0 0 0 4px #ff3838, 0 12px 30px rgba(0, 0, 0, 0.28);
+      position: relative;
+      overflow: hidden;
+      background: conic-gradient(from -90deg, #ff6b6b 0 360deg);
+      transform: rotate(0deg);
+    }
+
+    .wheel.spinning {
+      animation: spin 4s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(var(--spin-degree));
+      }
+    }
+
+    .wheel-segments {
+      position: absolute;
+      inset: 0;
+    }
+
+    .wheel-pointer {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-top: 36px solid #ffd700;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+      z-index: 30;
+    }
+
+    .wheel-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 74px;
+      height: 74px;
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      border: 4px solid #fff;
+      z-index: 20;
+    }
+
+    .wheel-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 140px;
+      transform-origin: center center;
+      text-align: center;
+      font-weight: 950;
+      color: #fff;
+      text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.42);
+      pointer-events: none;
+      font-size: 18px;
+      line-height: 1.1;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .form-section {
+      background: #fff;
+      padding: 14px;
+      border-radius: 18px;
+      border: 2px solid #ff6b6b;
+      margin: 10px 0 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 900;
+      color: #c92a2a;
+      font-size: 13px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 2px solid #ff6b6b;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s;
+      background: #fff;
+    }
+
+    input[type="email"]:focus {
+      border-color: #ffd700;
+      box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.22);
+    }
+
+    .file-upload {
+      margin-top: 12px;
+      padding: 14px;
+      border: 2px dashed #ff6b6b;
+      border-radius: 14px;
+      background: #fff9f0;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .file-upload:hover {
+      background: #ffe8d6;
+      border-color: #ffd700;
+    }
+
+    .file-upload input {
+      display: none;
+    }
+
+    .file-hint {
+      color: #666;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .btn-spin {
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, #ff3838, #ff6b6b);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 950;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(255, 56, 56, 0.38);
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-spin:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+
+    .btn-spin:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .error-msg {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: #ffe0e0;
+      border: 2px solid #ff6b6b;
+      border-radius: 12px;
+      color: #c92a2a;
+      font-size: 12px;
+      display: none;
+    }
+
+    .result-box {
+      margin-top: 10px;
+      padding: 14px;
+      background: linear-gradient(135deg, #fff9f0, #ffe8d6);
+      border: 3px solid #ffd700;
+      border-radius: 18px;
+      display: none;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .result-badge {
+      padding: 8px 12px;
+      background: #ff6b6b;
+      color: #fff;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .result-prize {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 900;
+      color: #c92a2a;
+      margin: 10px 0 8px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+    }
+
+    .result-prize .amount {
+      font-size: 22px;
+      color: #ff3838;
+      display: block;
+      margin-top: 6px;
+      font-weight: 950;
+    }
+
+    .qr-preview {
+      width: 100%;
+      max-width: 280px;
+      margin: 12px auto 0;
+      border-radius: 12px;
+      border: 2px solid #ff6b6b;
+      display: none;
+    }
+
+    @media (max-width: 360px) {
+      .header h1 {
+        font-size: 16px;
+      }
+
+      .wheel-label {
+        width: 120px;
+        font-size: 13px;
+      }
+
+      .wheel-center {
+        width: 68px;
+        height: 68px;
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🧧 Gia đình Hằng + Đạt Lì xì Tết 🧧</h1>
+      <p>Chúc mừng năm mới! Quay số may mắn nhận lì xì ngay!</p>
+    </div>
+
+    <div class="content">
+      <div class="wheel-section">
+        <div class="section-title">
+          <span>🎰</span>
+          <span>VÒNG QUAY MAY MẮN</span>
+          <span>🎰</span>
+        </div>
+
+        <div class="wheel-container">
+          <div class="wheel-pointer"></div>
+          <div class="wheel" id="wheel">
+            <div class="wheel-segments" id="wheelSegments"></div>
+            <div class="wheel-center">🧧</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="section-title" style="margin-bottom: 12px;">
+          <span>📝</span>
+          <span>ĐIỀN THÔNG TIN ĐỂ QUAY</span>
+          <span>📝</span>
+        </div>
+
+        <label>📧 Email của bạn</label>
+        <input id="email" type="email" placeholder="vd: dat@example.com" autocomplete="off" />
+
+        <label style="margin-top: 12px;">📱 Ảnh QR của bạn (để nhận tiền)</label>
+        <div class="file-upload" onclick="document.getElementById('qrImage').click()">
+          <div style="font-size: 40px; margin-bottom: 4px;">📸</div>
+          <div style="font-weight: 900; color: #c92a2a;">Chọn ảnh QR</div>
+          <div class="file-hint" id="fileHint">Chưa chọn file</div>
+          <input id="qrImage" type="file" accept="image/*" />
+        </div>
+
+        <button class="btn-spin" id="btnSpin">🎉 QUAY NGAY 🎉</button>
+        <div class="error-msg" id="err"></div>
+      </div>
+
+      <div class="result-box" id="result">
+        <div class="result-header">
+          <span class="result-badge" id="resultEmail"></span>
+          <span class="result-badge" id="resultTime"></span>
+        </div>
+        <div class="result-prize">
+          🎊 Chúc mừng bạn trúng 🎊
+          <span class="amount" id="resultAmount"></span>
+        </div>
+        <img class="qr-preview" id="preview" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API = "https://f6fe-42-115-109-123.ngrok-free.app";
+
+    const emailEl = document.getElementById("email");
+    const fileEl = document.getElementById("qrImage");
+    const fileHint = document.getElementById("fileHint");
+    const btn = document.getElementById("btnSpin");
+    const err = document.getElementById("err");
+    const result = document.getElementById("result");
+    const preview = document.getElementById("preview");
+    const wheel = document.getElementById("wheel");
+    const wheelSegments = document.getElementById("wheelSegments");
+
+    const COLORS = ['#ff6b6b', '#ffd700', '#ff3838', '#ffaa00', '#ee5a6f', '#ff8c42'];
+
+    let availablePrizes = [];
+
+    function setErr(msg) {
+      err.style.display = msg ? "block" : "none";
+      err.textContent = msg || "";
+    }
+
+    function money(v) { return Number(v).toLocaleString("vi-VN") + "đ"; }
+
+    function resetWheel() {
+      wheel.classList.remove("spinning");
+      wheel.style.setProperty("--spin-degree", "0deg");
+    }
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function normDeg(deg) {
+      return ((deg % 360) + 360) % 360;
+    }
+
+    async function loadWheel() {
+      try {
+        const res = await fetch(API + "/api/config");
+        const data = await res.json();
+
+        const slots = [];
+        for (const p of (data.prizes || [])) {
+          const remaining = Number(p.remaining || 0);
+          if (remaining <= 0) continue;
+          for (let i = 0; i < remaining; i++) {
+            slots.push({ label: p.label, amount: p.amount });
+          }
+        }
+
+        availablePrizes = shuffle(slots);
+
+        resetWheel();
+        wheelSegments.innerHTML = "";
+
+        if (availablePrizes.length === 0) {
+          wheel.style.background = "conic-gradient(from -90deg, #ddd 0 360deg)";
+          wheelSegments.innerHTML =
+            '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#666;font-weight:900;">Đã hết giải</div>';
+          return;
+        }
+
+        const segmentAngle = 360 / availablePrizes.length;
+        const gap = Math.min(1.4, segmentAngle * 0.12);
+        const border = "rgba(255,255,255,0.95)";
+
+        const stops = [];
+        for (let i = 0; i < availablePrizes.length; i++) {
+          const start = i * segmentAngle;
+          const end = (i + 1) * segmentAngle;
+          const color = COLORS[i % COLORS.length];
+
+          stops.push(`${border} ${start}deg ${Math.min(start + gap, end)}deg`);
+          stops.push(`${color} ${Math.min(start + gap, end)}deg ${end}deg`);
+        }
+        wheel.style.background = `conic-gradient(from -90deg, ${stops.join(",")})`;
+
+        const size = wheel.getBoundingClientRect().width;
+        const radius = Math.max(74, Math.min(105, size * 0.33));
+
+        const labelFont =
+          availablePrizes.length <= 8 ? 18 :
+            availablePrizes.length <= 12 ? 16 :
+              availablePrizes.length <= 18 ? 14 : 12;
+
+        availablePrizes.forEach((prize, i) => {
+          const centerAngle = i * segmentAngle + segmentAngle / 2;
+          const angleForLabel = centerAngle - 90;
+
+          const label = document.createElement("div");
+          label.className = "wheel-label";
+          label.style.fontSize = labelFont + "px";
+
+          label.style.transform =
+            `translate(-50%, -50%) rotate(${angleForLabel}deg) translateY(-${radius}px) rotate(${-angleForLabel}deg)`;
+
+          label.textContent = `${prize.label}`;
+          wheelSegments.appendChild(label);
+        });
+
+      } catch (e) {
+        wheel.style.background = "conic-gradient(from -90deg, #eee 0 360deg)";
+        wheelSegments.innerHTML =
+          '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#666;font-weight:900;">Lỗi tải dữ liệu</div>';
+      }
+    }
+
+    loadWheel();
+
+    fileEl.addEventListener("change", () => {
+      const f = fileEl.files?.[0];
+      fileHint.textContent = f ? `✅ ${f.name} (${(f.size / 1024).toFixed(0)} KB)` : "Chưa chọn file";
+    });
+
+    function randomPickPrize() {
+      if (availablePrizes.length === 0) return null;
+      const index = Math.floor(Math.random() * availablePrizes.length);
+      return { prize: availablePrizes[index], index };
+    }
+
+    function spinWheel(targetIndex) {
+      const segmentAngle = 360 / availablePrizes.length;
+      const targetAngle = targetIndex * segmentAngle + segmentAngle / 2;
+      const offset = normDeg(90 - targetAngle);
+      const totalRotation = 360 * 5 + offset;
+
+      wheel.style.setProperty('--spin-degree', `${totalRotation}deg`);
+      wheel.classList.remove("spinning");
+      void wheel.offsetWidth;
+      wheel.classList.add("spinning");
+
+      setTimeout(() => wheel.classList.remove("spinning"), 4000);
+    }
+
+    btn.onclick = async () => {
+      setErr("");
+      result.style.display = "none";
+      preview.style.display = "none";
+
+      const email = emailEl.value.trim();
+      const file = fileEl.files?.[0];
+
+      if (!email) {
+        setErr("⚠️ Vui lòng nhập email trước khi quay!");
+        return;
+      }
+      if (!file) {
+        setErr("⚠️ Vui lòng chọn ảnh QR trước khi quay!");
+        return;
+      }
+      if (!availablePrizes.length) {
+        setErr("😢 Hiện tại đã hết giải thưởng!");
+        return;
+      }
+
+      // Random pick prize on frontend
+      const picked = randomPickPrize();
+      if (!picked) {
+        setErr("😢 Không có giải thưởng!");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "⏳ Đang quay...";
+
+      // Spin wheel first
+      spinWheel(picked.index);
+
+      // Wait for animation
+      await new Promise(resolve => setTimeout(resolve, 4000));
+
+      // Send to backend
+      btn.textContent = "⏳ Đang lưu...";
+
+      try {
+        const fd = new FormData();
+        fd.append("email", email);
+        fd.append("qrImage", file);
+        fd.append("prizeAmount", picked.prize.amount.toString());
+
+        const res = await fetch(API + "/api/spin", { method: "POST", body: fd });
+        const data = await res.json();
+
+        if (res.status === 409 && data.code === "PRIZE_SOLD_OUT") {
+          setErr("⚠️ " + (data.message || "Giải vừa hết, quay lại nhé!"));
+          await loadWheel();
+        } else if (res.status === 409) {
+          setErr("⚠️ Email này đã quay rồi — hiển thị lại kết quả cũ.");
+          showResult(data.result);
+        } else if (res.status === 410) {
+          setErr("😢 Đã hết giải thưởng!");
+          await loadWheel();
+        } else if (!res.ok) {
+          setErr(data.message || "❌ Có lỗi xảy ra");
+        } else {
+          showResult(data);
+          await loadWheel();
+        }
+
+      } catch (e) {
+        setErr("❌ Không kết nối được server. Vui lòng thử lại!");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "🎉 QUAY NGAY 🎉";
+      }
+    };
+
+    function showResult(record) {
+      result.style.display = "block";
+      document.getElementById("resultEmail").textContent = "📧 " + record.email;
+      document.getElementById("resultTime").textContent = "🕒 " + new Date(record.createdAt).toLocaleString("vi-VN");
+      document.getElementById("resultAmount").textContent = record.prizeLabel + " • " + money(record.prizeAmount);
+
+      preview.src = record.qrImageUrl;
+      preview.style.display = "block";
+
+      result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+
+</html>
